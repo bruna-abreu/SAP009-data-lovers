@@ -9,7 +9,7 @@ const movieSearch = document.getElementById('movies-search')
 const order = document.getElementById('order')
 const release = document.getElementById('release')
 const director = document.getElementById('director')
-const stats = document.getElementById('stats')
+const stats = document.querySelector('.stats')
 
 //Função para fazer os cards aparecerem na tela
 function showingMovieCards(films) {

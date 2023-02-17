@@ -48,7 +48,7 @@ export const filters = (array, key, condition) =>
 
 //Funções dos personagens
 
-//Função para buscar o filme pelo nome --- TRABALHAR DEPOIS
+//Função para buscar o personagem pelo nome --- TRABALHAR DEPOIS
 export const searchCharacter = (people, searchedName) => {
   return people.filter(movie => movie.people.name.toLowerCase().includes(searchedName)); 
 };

@@ -46,7 +46,7 @@ function showingCharactersCards(films) {
 
 characters.innerHTML = showingCharactersCards(films) 
 
-//Função para buscar o filme pelo nome  --- TRABALHAR DEPOIS
+//Função para buscar o personagem pelo nome  --- TRABALHAR DEPOIS
 characterSearch.addEventListener ('input', event => {
   const searchedName = event.target.value.toLowerCase()
   const filteredName = searchCharacter(films, searchedName)
