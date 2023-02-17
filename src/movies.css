@@ -75,6 +75,8 @@
     border-radius: 40px;
     border: none;
     padding: 0.5%;
+    color: white;
+    text-align: center;
 }
 
 ::placeholder {
@@ -86,7 +88,7 @@
     background-color: #DCF3F8;
 }
 
-.stats {
+#stats {
     background-color: #46A4C8;
     font-family: 'DM Sans', sans-serif;
     height: 50px;
