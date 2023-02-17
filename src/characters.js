@@ -1,7 +1,11 @@
+import {searchCharacter} from './data.js'; 
+
 import data from './data/ghibli/ghibli.js';
 
 const films = data.films
 const characters = document.getElementById('charactersCards')
+const characterSearch = document.getElementById('characters-search')
+
 
 function showingCharactersCards(films) {
   const listOfPeople = films.map((film) => {
@@ -42,4 +46,13 @@ function showingCharactersCards(films) {
 
 characters.innerHTML = showingCharactersCards(films) 
 
-console.log(data)
+//Função para buscar o filme pelo nome  --- TRABALHAR DEPOIS
+characterSearch.addEventListener ('input', event => {
+  const searchedName = event.target.value.toLowerCase()
+  const filteredName = searchCharacter(films, searchedName)
+  const card = showingCharactersCards(filteredName)
+  characters.innerHTML = card
+
+
+  console.log(filteredName)
+})

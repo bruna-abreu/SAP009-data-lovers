@@ -9,8 +9,14 @@ computeStats(data): essa função nos permite fazer cálculos estatísticos bás
 
 Estes nomes de funções e parâmetros são somente referência, o que vocês decidir utilizar vai depender da sua implementação. */
 
+//Funções dos filmes
+//Função para buscar o filme pelo nome
+export const searchBar = (title, searchedName) => {
+  return title.filter(movie => movie.title.toLowerCase().includes(searchedName)); 
+};
+
 //Função para ordenar por A-Z/Z-A
-export const sortByOrder = (films) => films.sort((az, za) => {
+export const sortByOrderFilms = (films) => films.sort((az, za) => {
   if (az.title < za.title) {
     return -1
   } else if (az.title > za.title) {
@@ -32,15 +38,18 @@ export const sortByRelease = (films) => films.sort((oldest, recent) => {
 })
 
 //Função para filtrar por diretor
+export const filters = (array, key, condition) =>
+  array.filter((item) => item[key] === condition);
 
-export const sortByDirector = (films) => films.map((film) => {
-  const director = film.director
-  const copy = [...new Set(director)]
-  return copy
-
-  console.log(copy)
-})
 
 
 //-1 para ordem crescente
 //1 para ordem decrescente
+
+//Funções dos personagens
+
+//Função para buscar o filme pelo nome --- TRABALHAR DEPOIS
+export const searchCharacter = (people, searchedName) => {
+  return people.filter(movie => movie.people.name.toLowerCase().includes(searchedName)); 
+};
+
