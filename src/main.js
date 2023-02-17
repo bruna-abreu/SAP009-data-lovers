@@ -1,15 +1,17 @@
-import {sortByRelease, sortByOrder, sortByDirector} from './data.js'; 
+import {searchBar, sortByOrderFilms, sortByRelease, filters} from './data.js'; 
 
 import data from './data/ghibli/ghibli.js';
 
 
 const films = data.films
 const movies = document.getElementById('movieCards')
-const release = document.getElementById('release')
+const movieSearch = document.getElementById('movies-search')
 const order = document.getElementById('order')
+const release = document.getElementById('release')
 const director = document.getElementById('director')
-//const movieSearch = document.getElementById('movies-search')
+const stats = document.getElementById('stats')
 
+//Função para fazer os cards aparecerem na tela
 function showingMovieCards(films) {
   const listOfMovies = films.map((film) => {
     const allMovies = 
@@ -48,16 +50,26 @@ function showingMovieCards(films) {
 movies.innerHTML = showingMovieCards(films)
 
 
-//Função para ordenar por A-Z/Z-A --- ALTERAR NOME DA FUNÇÃO QUANDO FOR TRABALHAR COM OS PERSONAGENS
+//Função para buscar o filme pelo nome
+movieSearch.addEventListener ('input', event => {
+  const searchedName = event.target.value.toLowerCase()
+  const filteredName = searchBar(films, searchedName)
+  const card = showingMovieCards(filteredName)
+  movies.innerHTML = card
+
+  console.log(filteredName)
+})
+
+//Função para ordenar por A-Z/Z-A
 order.addEventListener ('change', () => {
   const pressed = (order).value;
-  const sortedOrder = sortByOrder(films, pressed)
+  const sortedOrder = sortByOrderFilms(films, pressed)
   const cards = showingMovieCards(sortedOrder)
   movies.innerHTML = cards
   
   if(pressed === 'za') {
     const pressed = (order).value;
-    const sortedOrder = sortByOrder(films, pressed).reverse()
+    const sortedOrder = sortByOrderFilms(films, pressed).reverse()
     const cards = showingMovieCards(sortedOrder)
     movies.innerHTML = cards
   }
@@ -82,18 +94,15 @@ release.addEventListener ('change', () => {
 })
 
 //Função para filtrar os diretores
-director.addEventListener ('change', () => {
-  const selected = (director).value
-  const sorted = sortByDirector(films, selected)
-  const card = showingMovieCards(sorted)
-  movies.innerHTML = card
-  
-  console.log(sorted)
+director.addEventListener('change', (event) => {
+  const selectedDirector = event.target.value
+  const filtered = filters(films, 'director', selectedDirector)
+  const cards = showingMovieCards(filtered)
+  movies.innerHTML = cards
+
+  const message = `The great Sr. ${selectedDirector} has directed ${filtered.length} film(s) in Studio Ghibli's history`
+  stats.innerHTML= message
+  movies.innerHTML = cards
+
+  console.log(filtered)
 })
-
-/*1. pegar as informações da tag director(getElementById)
- 2. criar um addEventListener para essa tag
- 3. pegar o valor da tag
- 4. separar os diretores
-
-*/
