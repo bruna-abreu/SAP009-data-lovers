@@ -70,36 +70,6 @@
     text-align: center;
 }
 
-/*#locations, #vehicles {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    column-gap: 3%;
-    margin: 3% 8% 3% 8%;
-    font-family: 'DM Sans', sans-serif;
-}
-
-#locations, #vehicles {
-    background-color: #46A4C8;
-    padding: 1%;
-    margin-top: 4%;
-    border-radius: 2%;
-    text-align: center;
-    filter: drop-shadow(6px 5px 4px rgba(0, 0, 0, 0.25));
-}
-
-#locationsImg, #vehiclesImg {
-    width: 15vw;
-    height: 11vw;
-}
-
-#locationsName, #vehiclesName {
-    font-size: 90%;
-}*/
-
-
-
 #allCards {
     display: flex;
     flex-wrap: wrap;
@@ -128,6 +98,7 @@
 
 #locationsName, #vehiclesName {
     font-size: small;
+    color: #fff;
 }
 
 @media screen and (max-width: 950px) {

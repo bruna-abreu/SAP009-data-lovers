@@ -88,7 +88,7 @@
     background-color: #DCF3F8;
 }
 
-#stats {
+.stats {
     background-color: #46A4C8;
     font-family: 'DM Sans', sans-serif;
     height: 50px;
@@ -200,6 +200,17 @@
     border-radius: 25px;
     /*width: 10vw;
     height: 15vw;*/
+}
+
+#footer {
+    background-color: #46A4C8
+}
+
+#footerImg {
+    margin-left: 90%;
+    height: 10rem;
+    z-index: 1;
+    bottom: -10px;
 }
 
 @media screen and (max-width: 450px) {
