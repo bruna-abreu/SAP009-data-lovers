@@ -4,6 +4,8 @@ const films = data.films
 const allCards = document.getElementById('allCards')
 const locationsCards = showingLocationsCards(films);
 const vehiclesCards = showingVehiclesCards(films);
+const btnLocations = document.getElementById('locations')
+const btnVehicles = document.getElementById('vehicles')
 
 const locationsAndVehicles = locationsCards.concat(vehiclesCards);
 
@@ -52,3 +54,11 @@ function showingVehiclesCards(films) {
 }
   
 allCards.innerHTML = locationsAndVehicles;  
+
+btnLocations.addEventListener('click', () => {
+  allCards.innerHTML = showingLocationsCards(films);
+})
+
+btnVehicles.addEventListener('click', () => {
+  allCards.innerHTML = showingVehiclesCards(films);
+})
