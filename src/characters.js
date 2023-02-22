@@ -1,10 +1,11 @@
-import {searchCharacter} from './data.js'; 
+import {searchCharacter, filmPeople} from './data.js'; 
 
 import data from './data/ghibli/ghibli.js';
 
 const films = data.films
 const characters = document.getElementById('charactersCards')
 const characterSearch = document.getElementById('characters-search')
+const btnFilms = document.querySelectorAll('.btn-film')
 
 
 function showingCharactersCards(films) {
@@ -31,7 +32,7 @@ function showingCharactersCards(films) {
       <li id="eye_color"><strong>Eye color:</strong> ${person.eye_color}</strong>
       <li id="hair_color"><strong>Hair color:</strong> ${person.hair_color}</strong>
       <li id="specie"><strong>Specie:</strong> ${person.specie}</strong>
-      </ul>
+      </ul> 
      </div>
 
      </div>
@@ -44,15 +45,29 @@ function showingCharactersCards(films) {
   return listOfPeople.join('');
 }
 
-characters.innerHTML = showingCharactersCards(films) 
+//characters.innerHTML = showingCharactersCards(films)
 
-//Função para buscar o personagem pelo nome  --- TRABALHAR DEPOIS
+//Função para buscar o personagem pelo nome 
 characterSearch.addEventListener ('input', event => {
   const searchedName = event.target.value.toLowerCase()
   const filteredName = searchCharacter(films, searchedName)
+  console.log(filteredName)
   const card = showingCharactersCards(filteredName)
   characters.innerHTML = card
 
-
-  console.log(filteredName)
 })
+
+//Botão para limpar os filtros/busca e dar refresh na página
+const clean = document.getElementById('clean')
+
+clean.addEventListener('click', function refresh(){
+  window.location.reload()})
+
+//Função para mostrar os botões de cada filme e filtrar os personagens
+for (let i = 0; i < btnFilms.length; i++) {
+  btnFilms[i].addEventListener('click', () => {
+    const movie = filmPeople(films, btnFilms[i].value)
+    const cards = showingCharactersCards(movie)
+    characters.innerHTML = cards;
+  });
+}
