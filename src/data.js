@@ -15,6 +15,9 @@ export const searchBar = (title, searchedName) => {
   return title.filter(movie => movie.title.toLowerCase().includes(searchedName)); 
 };
 
+//-1 para ordem crescente
+//1 para ordem decrescente
+
 //Função para ordenar por A-Z/Z-A
 export const sortByOrderFilms = (films) => films.sort((az, za) => {
   if (az.title < za.title) {
@@ -42,14 +45,25 @@ export const filters = (array, key, condition) =>
   array.filter((item) => item[key] === condition);
 
 
-
-//-1 para ordem crescente
-//1 para ordem decrescente
-
 //Funções dos personagens
 
-//Função para buscar o personagem pelo nome --- TRABALHAR DEPOIS
-export const searchCharacter = (people, searchedName) => {
-  return people.filter(movie => movie.people.name.toLowerCase().includes(searchedName)); 
+//Função para buscar o personagem pelo nome
+export const searchCharacter = (films, searchedName) => {
+  const filmsCopy = [...films]
+
+  filmsCopy.forEach(film => {
+    const search = film.people.filter(person => person.name.toLowerCase().includes(searchedName))
+    film.people = search
+  });
+  return filmsCopy;
 };
 
+//Função para mostrar os personagens de acordo com o filme
+export function filmPeople (films, btn) {
+  const filmSelected = films.filter((film) => {
+    if (btn === film.title){
+      return film.people;
+    }
+  })
+  return filmSelected;
+}

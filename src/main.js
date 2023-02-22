@@ -60,6 +60,12 @@ movieSearch.addEventListener ('input', event => {
   console.log(filteredName)
 })
 
+//Botão para limpar os filtros/busca e dar refresh na página
+const clean = document.getElementById('clean')
+
+clean.addEventListener('click', function refresh(){
+  window.location.reload()})
+
 //Função para ordenar por A-Z/Z-A
 order.addEventListener ('change', () => {
   const pressed = (order).value;

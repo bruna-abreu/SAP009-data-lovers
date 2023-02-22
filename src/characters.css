@@ -10,7 +10,7 @@
     background-size: cover;
     background-position: top center;
     overflow: hidden;
-}
+} 
 
 #logo {
     width: 45%;
@@ -30,46 +30,50 @@
 .menu a {
     text-decoration: none;
     color: #1A3E4B;
-    font-size: 200%;
+    font-size: 2rem;
     align-items: center;
     margin-left: 5%;
 }
 
-.characters-filters {
+.search-area {
     display: flex;
     position: relative;
     flex-direction: row;
     justify-content: center;
     padding: 2%;
-    margin-left: 5%;
-}
-
-.filters {
-    background-color: #3793b7;
-    width: 20%;
-    font-size: 100%;
-    border-radius: 40px;
-    text-align: center;
-    color: white;
-    border: none;
-    margin-left: 2%;
-    padding: 0.5%;
-    cursor: pointer;
 }
 
 #characters-search {
     background-color: #3793b7;
-    width: 20%;
-    height: 10%;
+    width: 15rem;
+    height: 1.7rem;
     font-size: 100%;
     border-radius: 40px;
     border: none;
+    
     padding: 0.5%;
+    color: white;
+    text-align: center;
 }
 
 ::placeholder {
     color: white;
+    
     text-align: center;
+}
+
+#clean {
+    background-color: #3793b7;
+    width: 5rem;
+    height: 1.7rem;
+    font-size: 100%;
+    border-radius: 40px;
+    border: none;
+    padding: 0.5%;
+    margin-left: 1rem;
+    color: white;
+    text-align: center;
+    cursor: pointer;
 }
 
 .generalBody {
@@ -85,6 +89,31 @@
     text-align: center;
 }
 
+.btn-films {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-film {
+    width: 8rem;
+    height: 5rem;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #46A4C8;
+    border: none;
+    color: #FFF;
+    
+    border-radius: 10px;
+}
+
 #charactersCards {
     display: flex;
 	flex-wrap: wrap;
@@ -97,8 +126,6 @@
 
 #container {
     position: relative;
-    /*width: 230px;
-    height: 310px;*/
     width: 255px;
     height: 370px;
     margin-bottom: 5%;
@@ -159,111 +186,123 @@
     padding-bottom: 8%;
 }
 
-
 @media screen and (max-width: 550px) {
-    .bgHeader {
-        background-size: contain;
+    .menu {
+        margin-right: 1rem;
     }
 
     .menu a {
-        font-size: 150%;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    #logo {
+        width: 20rem;
+        margin-left: 7rem;
     }
 
     .stats {
-        padding: 3%;
-        margin-top: -1%;
+        padding-top: 1rem;
     }
-} 
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
+    }
+}   
 
 
-
-@media screen and (max-width: 450px) {
-
-    .bgHeader {
-        background-size: contain;
+@media screen and (max-width: 500px) {
+    .menu {
+        margin-right: 1rem;
     }
 
     .menu a {
-        font-size: 100%;
+        font-size: 1rem;
+        justify-content: center;
     }
 
-    .characters-filters {
-        padding: 1%;
-        margin: 0 1% 1% 1%;
-    }
-
-    .filters {
-        font-size: 80%;
-    }
-
-    #search {
-        padding: 1%;
-        font-size: 80%;
+    #logo {
+        width: 20rem;
+        margin-left: 3rem;
     }
 
     .stats {
-        padding: 3%;
+        padding-top: 1rem;
     }
+
+    #card {
+        margin-left: 10rem;
+    }
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
+    }
+    
 }
 
 @media screen and (max-width: 400px) {
-    .bgHeader {
-        background-size: contain;
+    #logo {
+        width: 20rem;
+        margin-left: 1.5rem;
+    }
+
+    .menu {
+        margin-right: 1rem;
     }
 
     .menu a {
-        font-size: 100%;
+        font-size: 0.9rem;
     }
 
-    .characters-filters {
-        padding: 1%;
-        margin: 0 1% 1% 1%;
-    }
-
-    .filters {
-        font-size: 80%;
-    }
-
-    #search {
-        padding: 1%;
-        font-size: 80%;
-    }
-
-    .stats {
-        padding: 3%;
-        font-size: 100%;
-        margin-top: -1.7%;
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
     }
 }
 
 @media screen and (max-width: 300px) {
-    .bgHeader {
-        background-size: contain;
+    #logo {
+        width: 15rem;
+        margin-left: 1rem;
     }
 
-
-
     .menu a {
+        font-size: 0.65rem;
+    }
+
+    #characters-search {
+        width: 9rem;
         font-size: 80%;
     }
 
-    .characters-filters {
-        padding: 1%;
-        margin: 0 1% 1% 1%;
-    }
-
-    .filters {
-        font-size: 55%;
-    }
-
-    #search {
-        padding: 1%;
-        font-size: 55%;
+    #clean {
+        width: 4rem;
+        font-size: 80%;
     }
 
     .stats {
-        padding: 3%;
-        font-size: 50%;
-        margin-top: -1.7%;
+        padding-top: 0.5rem;
+        font-size: 90%;
+    }
+
+    .btn-films {
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    
+    }
+    
+    .btn-film {
+        width: 6rem;
+        height: 6rem;
+        padding: 1rem;
+    }
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
     }
 }

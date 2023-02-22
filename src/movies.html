@@ -9,12 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <title>Movies</title>
     <link rel="stylesheet" href="movies.css" />
+    <link rel="icon" type="image/png" href="./totoro-icon.png"/>
 </head>
 <body class="generalBody">
   <header class="bgHeader">
     <img src="./ghibli-logo.png" alt="logo studio ghibli" id="logo">
 
-    <nav class="menu" class="moviesMenu">
+    <nav class="menu" id="moviesMenu">
       <a href="./index.html">Home</a> 
       <a href="./characters.html">Characters</a>
       <a href="./locations-and-vehicles.html">Locations and Vehicles</a>   
@@ -22,6 +23,7 @@
 
     <div class="movie-filters">
     <input type="search" id="movies-search" placeholder="Search">
+
     <select class="filters" id="order">
       <option value="" disabled="" selected="" hidden >Order</option>
       <option value="az" id="az">A-Z</option>
@@ -41,6 +43,8 @@
       <option value="Gorō Miyazaki">Gorō Miyazaki</option>
       <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
     </select>
+
+    <button id="clean">Clean search</button>
   </div>
   </header>
 
