@@ -19,26 +19,36 @@ export const searchBar = (title, searchedName) => {
 //1 para ordem decrescente
 
 //Função para ordenar por A-Z/Z-A
-export const sortByOrderFilms = (films) => films.sort((az, za) => {
-  if (az.title < za.title) {
-    return -1
-  } else if (az.title > za.title) {
-    return 1
-  } else {
-    return 0
-  }
-})
+export const sortByOrderFilms = (films) => {
+  const filmsCopy = [...films]
+
+  filmsCopy.sort((az, za) => {
+    if (az.title < za.title) {
+      return -1
+    } else if (az.title > za.title) {
+      return 1
+    } else {
+      return 0
+    }
+  })
+  return filmsCopy
+}
 
 //Função para ordenar por data de lançamento
-export const sortByRelease = (films) => films.sort((oldest, recent) => {
-  if (oldest.release_date > recent.release_date) {
-    return -1
-  } else if (oldest.release_date < recent.release_date) {
-    return 1
-  } else {
-    return 0
-  }
-})
+export const sortByRelease = (films) => {
+  const filmsCopy = [...films]
+
+  filmsCopy.sort((oldest, recent) => {
+    if (oldest.release_date > recent.release_date) {
+      return -1
+    } else if (oldest.release_date < recent.release_date) {
+      return 1
+    } else {
+      return 0
+    }
+  })
+  return filmsCopy
+}
 
 //Função para filtrar por diretor
 export const filters = (array, key, condition) =>

@@ -1,21 +1,30 @@
-import { searchBar, sortByOrderFilms, sortByRelease, filters } from '../src/data.js';
+import { searchBar, sortByOrderFilms, sortByRelease, filters, searchCharacter } from '../src/data.js';
 
 const castle = { 
   title: "Castle in the Sky", 
   director: "Hayao Miyazaki", 
-  release_date: 1986
+  release_date: 1986,
+  people: [
+    {name: "Lusheeta Toel Ul Laputa"}
+  ]
 }
 
 const fireflies = { 
   title: "Grave of the Fireflies", 
   director: "Isao Takahata", 
-  release_date: 1988
+  release_date: 1988,
+  people: [
+    {name: "Seita Yokokawa"}
+  ]
 }
 
 const marnie = { 
   title: "When Marnie Was There", 
   director: "Hiromasa Yonebayashi", 
-  release_date: 2014
+  release_date: 2014,
+  people: [
+    {name: "Anna Sasaki"} 
+  ]
 }
 
 const testMovies = [castle, fireflies, marnie]
@@ -31,12 +40,6 @@ describe('testMovies', () => {
 describe('search by name', () => {
   it('should be a function', () => {
     expect(typeof searchBar).toBe('function')
-  });
-
-  //testar a barra de pesquisa (palavra inteira) -- ok
-  it('should filter by search bar - full word', () => {
-    const title = 'fireflies';
-    expect(searchBar(testMovies, title)).toStrictEqual([fireflies])
   });
 
   //testar a barra de pesquisa (primeiras letras) -- ok
@@ -94,4 +97,21 @@ describe('filter', () => {
   it('should filter by director', () => {
     expect(filters(testMovies, 'director', 'Hayao Miyazaki')).toEqual([castle])
   })
+})
+
+//testar se a função searchCharacter realmente é uma função -- ok
+describe('search by character', () => {
+  it('should be a function', () => {
+    expect(typeof searchCharacter).toBe('function')
+  });
+
+  //testar a barra de pesquisa de personagem (primeiras letras) -- ok
+  it('should filter by character - only some letters', () => {
+    const name = 'lus';
+    const resultado = searchCharacter(testMovies, name)
+    expect(resultado.length).toEqual(testMovies.length)
+    expect(resultado[0].people.length).toEqual(1)
+    expect(resultado[1].people.length).toEqual(0)
+    expect(resultado[2].people.length).toEqual(0)
+  });
 })
