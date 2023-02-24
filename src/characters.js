@@ -70,4 +70,4 @@ for (let i = 0; i < btnFilms.length; i++) {
     const cards = showingCharactersCards(movie)
     characters.innerHTML = cards;
   });
-}
+} 
