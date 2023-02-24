@@ -13,8 +13,9 @@
 } 
 
 #logo {
-    width: 45%;
-    margin-left: 30%;
+    display: block;
+    margin: 5px auto;
+    max-width: 45%;
 }
 
 .menu {
@@ -186,6 +187,33 @@
     padding-bottom: 8%;
 }
 
+.footer {
+    background-color: #46A4C8;
+    height: 3rem;
+}
+
+.footer-credits {
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    padding-top: 1%;
+    color: #fff;
+}
+
+.footer-links {
+    font-weight: bold;
+}
+
+.footer-links:visited {
+    color: #fff;
+}
+
+@media screen and (max-width: 720px) {
+    .menu a {
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width: 550px) {
     .menu {
         margin-right: 1rem;
@@ -194,11 +222,6 @@
     .menu a {
         font-size: 1rem;
         justify-content: center;
-    }
-
-    #logo {
-        width: 20rem;
-        margin-left: 7rem;
     }
 
     .stats {
@@ -222,17 +245,8 @@
         justify-content: center;
     }
 
-    #logo {
-        width: 20rem;
-        margin-left: 3rem;
-    }
-
     .stats {
         padding-top: 1rem;
-    }
-
-    #card {
-        margin-left: 10rem;
     }
 
     #card {
@@ -243,11 +257,6 @@
 }
 
 @media screen and (max-width: 400px) {
-    #logo {
-        width: 20rem;
-        margin-left: 1.5rem;
-    }
-
     .menu {
         margin-right: 1rem;
     }
@@ -263,11 +272,6 @@
 }
 
 @media screen and (max-width: 300px) {
-    #logo {
-        width: 15rem;
-        margin-left: 1rem;
-    }
-
     .menu a {
         font-size: 0.65rem;
     }
