@@ -1,4 +1,4 @@
-import { searchBar, sortByOrderFilms, sortByRelease, filters, searchCharacter } from '../src/data.js';
+import { searchBar, sortByOrderFilms, sortByRelease, filters, searchCharacter, filmPeople  } from '../src/data.js';
 
 const castle = { 
   title: "Castle in the Sky", 
@@ -14,7 +14,9 @@ const fireflies = {
   director: "Isao Takahata", 
   release_date: 1988,
   people: [
-    {name: "Seita Yokokawa"}
+    {name: "Seita Yokokawa"},
+    {name: "Setsuko Yokokawa"},
+    {name: "Mrs. Yokokawa"}
   ]
 }
 
@@ -36,14 +38,14 @@ describe('testMovies', () => {
   })
 })
 
-//testar se a função searchByName realmente é uma função -- ok
+//testar se a função searchBar realmente é uma função -- ok
 describe('search by name', () => {
   it('should be a function', () => {
     expect(typeof searchBar).toBe('function')
   });
 
-  //testar a barra de pesquisa (primeiras letras) -- ok
-  it('should filter by search bar - only some letters', () => {
+  //testar a barra de pesquisa -- ok
+  it('should filter by search bar', () => {
     const title = 'mar';
     expect(searchBar(testMovies, title)).toStrictEqual([marnie])
   });
@@ -58,10 +60,10 @@ describe('sort by order', () => {
   //testar a ordenação de Z-A -- ok
   it('should sort by ZA', () => {
     const order = sortByOrderFilms(testMovies, 'ZA')
-    expect(order[2].title).toEqual("When Marnie Was There")
+    expect(order[0].title).toEqual("When Marnie Was There")
   });
 
-  //testar a ordenação de A-Z -- ok
+  //testar a ordenação de A-Z -- ERRO
   it('should sort by AZ', () => {
     const order = sortByOrderFilms(testMovies, 'AZ')
     expect(order[0].title).toEqual("Castle in the Sky")
@@ -74,10 +76,10 @@ describe('sort by release', () => {
     expect(typeof sortByRelease).toBe('function')
   });
 
-  //testar a data de lançamento mais antiga -- ok
+  //testar a data de lançamento mais antiga -- ERRO
   it('should sort by release date - oldest', () => {
     const release = sortByRelease(testMovies, 'Castle In The Sky')
-    expect([release[2].release_date]).toEqual([castle.release_date])
+    expect([release[0].release_date]).toEqual([castle.release_date])
   });
 
   //testar a data de lançamento mais recente -- ok
@@ -105,8 +107,8 @@ describe('search by character', () => {
     expect(typeof searchCharacter).toBe('function')
   });
 
-  //testar a barra de pesquisa de personagem (primeiras letras) -- ok
-  it('should filter by character - only some letters', () => {
+  //testar a barra de pesquisa de personagem -- ok
+  it('should filter by character', () => {
     const name = 'lus';
     const resultado = searchCharacter(testMovies, name)
     expect(resultado.length).toEqual(testMovies.length)
@@ -114,4 +116,20 @@ describe('search by character', () => {
     expect(resultado[1].people.length).toEqual(0)
     expect(resultado[2].people.length).toEqual(0)
   });
+})
+
+//testar os botões para filtrar os personagens de acordo com os filmes
+
+describe('filter characters by film', () => {
+  it('should be a function', () => {
+    expect(typeof filmPeople).toBe('function')
+  });
+
+  it('should filter characters by film', () => {
+    const characters = filmPeople(testMovies, fireflies);
+
+    expect(characters.people[0].name).toEqual("Seita Yokokawa");
+    expect(characters.people[1].name).toEqual("Setsuko Yokokawa");
+    expect(characters.people[2].name).toEqual("Mrs. Yokokawa");
+  })
 })

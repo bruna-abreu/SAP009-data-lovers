@@ -1,4 +1,4 @@
-import {searchCharacter, filmPeople} from './data.js'; 
+import { searchCharacter, filmPeople } from './data.js'; 
 
 import data from './data/ghibli/ghibli.js';
 
@@ -54,7 +54,6 @@ characterSearch.addEventListener ('input', event => {
   console.log(filteredName)
   const card = showingCharactersCards(filteredName)
   characters.innerHTML = card
-
 })
 
 //Botão para limpar os filtros/busca e dar refresh na página
@@ -69,5 +68,6 @@ for (let i = 0; i < btnFilms.length; i++) {
     const movie = filmPeople(films, btnFilms[i].value)
     const cards = showingCharactersCards(movie)
     characters.innerHTML = cards;
+
   });
 } 

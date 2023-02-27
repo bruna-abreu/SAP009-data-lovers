@@ -10,7 +10,7 @@
     background-size: cover;
     background-position: top center;
     overflow: hidden;
-}
+} 
 
 #logo {
     display: block;
@@ -86,8 +86,10 @@
     padding: 0.5%;
     margin-left: 1.5rem;
     color: white;
-    text-align: center;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .generalBody {
@@ -95,7 +97,7 @@
 }
 
 .stats {
-    background-color: #46A4C8;
+    background-color: #3793b7;
     font-family: 'DM Sans', sans-serif;
     height: 50px;
     color: white;
