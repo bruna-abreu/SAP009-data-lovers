@@ -57,7 +57,6 @@ movieSearch.addEventListener ('input', event => {
   const card = showingMovieCards(filteredName)
   movies.innerHTML = card
 
-  console.log(filteredName)
 })
 
 //Botão para limpar os filtros/busca e dar refresh na página
@@ -73,14 +72,13 @@ order.addEventListener ('change', () => {
   const cards = showingMovieCards(sortedOrder)
   movies.innerHTML = cards
   
-  if(pressed === 'za') {
+  if(pressed === 'az') {
     const pressed = (order).value;
     const sortedOrder = sortByOrderFilms(films, pressed).reverse()
     const cards = showingMovieCards(sortedOrder)
     movies.innerHTML = cards
   }
   
-  console.log(sortedOrder)
 })
 
 //Função para ordenar por data de lançamento
@@ -96,7 +94,6 @@ release.addEventListener ('change', () => {
     movies.innerHTML = cardsReversed
   }
   
-  console.log(sorted)
 })
 
 //Função para filtrar os diretores
@@ -110,5 +107,4 @@ director.addEventListener('change', (event) => {
   stats.innerHTML= message
   movies.innerHTML = cards
 
-  console.log(filtered)
 })
