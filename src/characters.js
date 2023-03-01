@@ -1,4 +1,4 @@
-import { searchCharacter, filmPeople } from './data.js'; 
+import { searchCharacter, filmPeople} from './data.js'; 
 
 import data from './data/ghibli/ghibli.js';
 
@@ -6,6 +6,7 @@ const films = data.films
 const characters = document.getElementById('charactersCards')
 const characterSearch = document.getElementById('characters-search')
 const btnFilms = document.querySelectorAll('.btn-film')
+const stats = document.querySelector('.stats')
 
 
 function showingCharactersCards(films) {
@@ -51,7 +52,6 @@ function showingCharactersCards(films) {
 characterSearch.addEventListener ('input', event => {
   const searchedName = event.target.value.toLowerCase()
   const filteredName = searchCharacter(films, searchedName)
-  console.log(filteredName)
   const card = showingCharactersCards(filteredName)
   characters.innerHTML = card
 })
@@ -69,5 +69,11 @@ for (let i = 0; i < btnFilms.length; i++) {
     const cards = showingCharactersCards(movie)
     characters.innerHTML = cards;
 
+
+
+    //Função para mostrar a quantidade de personagens por filme
+    const message = `${(films[i].people).length} characters help tell this story!`
+    stats.innerHTML = message
   });
 } 
+

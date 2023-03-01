@@ -71,14 +71,6 @@ order.addEventListener ('change', () => {
   const sortedOrder = sortByOrderFilms(films, pressed)
   const cards = showingMovieCards(sortedOrder)
   movies.innerHTML = cards
-  
-  if(pressed === 'az') {
-    const pressed = (order).value;
-    const sortedOrder = sortByOrderFilms(films, pressed).reverse()
-    const cards = showingMovieCards(sortedOrder)
-    movies.innerHTML = cards
-  }
-  
 })
 
 //Função para ordenar por data de lançamento
@@ -87,13 +79,6 @@ release.addEventListener ('change', () => {
   const sorted = sortByRelease(films, selected)
   const card = showingMovieCards(sorted)
   movies.innerHTML = card
-  
-  if(selected === 'oldest') {
-    const sortedReverse = sortByRelease(films, selected).reverse()
-    const cardsReversed = showingMovieCards(sortedReverse)
-    movies.innerHTML = cardsReversed
-  }
-  
 })
 
 //Função para filtrar os diretores
@@ -106,5 +91,4 @@ director.addEventListener('change', (event) => {
   const message = `The great Sr. ${selectedDirector} has directed ${filtered.length} film(s) in Studio Ghibli's history`
   stats.innerHTML= message
   movies.innerHTML = cards
-
 })

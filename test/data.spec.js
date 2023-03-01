@@ -1,4 +1,4 @@
-import { searchBar, sortByOrderFilms, sortByRelease, filters, searchCharacter, filmPeople  } from '../src/data.js';
+import { searchBar, sortByOrderFilms, sortByRelease, filters, searchCharacter, filmPeople} from '../src/data.js';
 
 const castle = { 
   title: "Castle in the Sky", 
@@ -57,16 +57,16 @@ describe('sort by order', () => {
     expect(typeof sortByOrderFilms).toBe('function')
   });
 
-  //testar a ordenação de Z-A -- ok
-  it('should sort by ZA', () => {
-    const order = sortByOrderFilms(testMovies, 'ZA')
-    expect(order[0].title).toEqual("When Marnie Was There")
+  //testar a ordenação de A-Z -- ok
+  it('should sort by AZ', () => {
+    const order = sortByOrderFilms(testMovies, 'az')
+    expect(order[0].title).toEqual("Castle in the Sky")
   });
 
-  //testar a ordenação de A-Z -- ERRO
-  it('should sort by AZ', () => {
-    const order = sortByOrderFilms(testMovies, 'AZ')
-    expect(order[0].title).toEqual("Castle in the Sky")
+  //testar a ordenação de Z-A -- ok
+  it('should sort by ZA', () => {
+    const order = sortByOrderFilms(testMovies, 'za')
+    expect(order[0].title).toEqual("When Marnie Was There")
   });
 })
 
@@ -76,16 +76,16 @@ describe('sort by release', () => {
     expect(typeof sortByRelease).toBe('function')
   });
 
-  //testar a data de lançamento mais antiga -- ERRO
+  //testar a data de lançamento mais antiga -- ok
   it('should sort by release date - oldest', () => {
-    const release = sortByRelease(testMovies, 'Castle In The Sky')
-    expect([release[0].release_date]).toEqual([castle.release_date])
+    const release = sortByRelease(testMovies, 'oldest')
+    expect(release[0].release_date).toEqual(castle.release_date)
   });
 
   //testar a data de lançamento mais recente -- ok
   it('should sort by release date - more recent', () => {
-    const release = sortByRelease(testMovies, 'When Marnie Was There')
-    expect([release[0].release_date]).toEqual([marnie.release_date])
+    const release = sortByRelease(testMovies, 'recent')
+    expect(release[0].release_date).toEqual(marnie.release_date)
   });
 })
 
@@ -97,7 +97,7 @@ describe('filter', () => {
 
   //testar se a função filtra por diretor (retornar "Castle in the Sky" para o diretor Miyazaki) -- ok
   it('should filter by director', () => {
-    expect(filters(testMovies, 'director', 'Hayao Miyazaki')).toEqual([castle])
+    expect(filters(testMovies, 'director', 'Hayao Miyazaki')).toStrictEqual([castle])
   })
 })
 
@@ -118,18 +118,22 @@ describe('search by character', () => {
   });
 })
 
-//testar os botões para filtrar os personagens de acordo com os filmes
-
+//testar se a função filmPeople realmente é uma função -- ok
 describe('filter characters by film', () => {
   it('should be a function', () => {
     expect(typeof filmPeople).toBe('function')
   });
 
+  //testar se os botões estão filtrando os personagens de acordo com os filmes -- ERRO
   it('should filter characters by film', () => {
-    const characters = filmPeople(testMovies, fireflies);
+    const characters = filmPeople(testMovies, "Grave of the Fireflies");
+    
+    expect(characters[1].people[0].name).toEqual("Seita Yokokawa");
+    expect(characters[1].people[1].name).toEqual("Setsuko Yokokawa");
+    expect(characters[1].people[2].name).toEqual("Mrs. Yokokawa");
 
-    expect(characters.people[0].name).toEqual("Seita Yokokawa");
-    expect(characters.people[1].name).toEqual("Setsuko Yokokawa");
-    expect(characters.people[2].name).toEqual("Mrs. Yokokawa");
+    /*
+    expect(filmPeople(testMovies, 'people', 'Seita Yokokawa')).toEqual(fireflies.people) */
   })
+
 })
