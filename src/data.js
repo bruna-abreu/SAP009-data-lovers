@@ -11,10 +11,10 @@ export function sortByOrderFilms(films, order){
   if(order === "az") {
     newArray.sort(function(a,b){
       if(a.title < b.title){
-        return -1; //linha que não está sendo coberta
+        return -1;
       }
     })
-  } else if(order === "za"){
+  } else {
     newArray.sort(function(a,b){
       if(a.title > b.title){
         return -1;
@@ -31,10 +31,10 @@ export function sortByRelease(films, order){
   if(order === "oldest") {
     newArray.sort(function(oldest, recent){
       if(oldest.release_date < recent.release_date){
-        return -1; //linha que não está sendo coberta
+        return -1;
       }
     })
-  } else if(order === "recent"){
+  } else{
     newArray.sort(function(oldest, recent){
       if(oldest.release_date > recent.release_date){
         return -1;
@@ -54,7 +54,7 @@ export const filters = (array, key, condition) =>
 
 //Função para buscar o personagem pelo nome
 export const searchCharacter = (films, searchedName) => {
-  const filmsCopy = [...films]
+  const filmsCopy = JSON.parse(JSON.stringify(films))
 
   filmsCopy.forEach(film => {
     const search = film.people.filter(person => person.name.toLowerCase().includes(searchedName))
@@ -64,13 +64,12 @@ export const searchCharacter = (films, searchedName) => {
 }
 
 //Função para mostrar os personagens de acordo com o filme
-export function filmPeople (films, btn) {
+export function filmPeople (films, title) {
   const filmsCopy = [...films]
 
-  const filmSelected = filmsCopy.filter((film) => {
-    if (btn === film.title){
-      return film.people
-    }
+  const filmSelected = filmsCopy.find((film) => {
+    return film.title === title
+    
   })
-  return filmSelected;
+  return filmSelected.people
 }

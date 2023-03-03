@@ -29,7 +29,7 @@ const marnie = {
   ]
 }
 
-const testMovies = [castle, fireflies, marnie]
+const testMovies = [fireflies, castle, marnie]
 
 //testar se a const testMovies realmente é um objeto -- ok
 describe('testMovies', () => {
@@ -107,7 +107,7 @@ describe('search by character', () => {
     expect(typeof searchCharacter).toBe('function')
   });
 
-  //testar a barra de pesquisa de personagem -- ok
+  //testar a barra de pesquisa de personagem -- ERRO
   it('should filter by character', () => {
     const name = 'lus';
     const resultado = searchCharacter(testMovies, name)
@@ -124,16 +124,9 @@ describe('filter characters by film', () => {
     expect(typeof filmPeople).toBe('function')
   });
 
-  //testar se os botões estão filtrando os personagens de acordo com os filmes -- ERRO
+  //testar se os botões estão filtrando os personagens de acordo com os filmes -- ok
   it('should filter characters by film', () => {
-    const characters = filmPeople(testMovies, "Grave of the Fireflies");
-    
-    expect(characters[1].people[0].name).toEqual("Seita Yokokawa");
-    expect(characters[1].people[1].name).toEqual("Setsuko Yokokawa");
-    expect(characters[1].people[2].name).toEqual("Mrs. Yokokawa");
-
-    /*
-    expect(filmPeople(testMovies, 'people', 'Seita Yokokawa')).toEqual(fireflies.people) */
+    const people = filmPeople(testMovies, "Grave of the Fireflies");
+    expect(people).toEqual(fireflies.people);
   })
-
 })

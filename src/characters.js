@@ -9,20 +9,17 @@ const btnFilms = document.querySelectorAll('.btn-film')
 const stats = document.querySelector('.stats')
 
 
-function showingCharactersCards(films) {
-  const listOfPeople = films.map((film) => {
-    const people = film.people.map((person) => {
-      const allPeople = 
+function showingCharactersCards(characters) {
+  const people = characters.map((person) => {
+    const allPeople = 
     `
     <div id="container">
     <div id="card">
-
 
      <div id="frontCard" class="characters">
      <img id="characterImg" alt="Character poster" src="${person.img}"/>
      <div id="charactersName">
      <p class="charactersTitle">${person.name}</p>
-     <p class="charactersMovie">(${film.title})</p>
      </div>
      </div>
 
@@ -39,11 +36,10 @@ function showingCharactersCards(films) {
      </div>
      </div>
     `
-      return allPeople
-    });
-    return people.join('');
-  })
-  return listOfPeople.join('');
+    return allPeople
+  });
+  return people.join('');
+
 }
 
 //characters.innerHTML = showingCharactersCards(films)
@@ -65,14 +61,13 @@ clean.addEventListener('click', function refresh(){
 //Função para mostrar os botões de cada filme e filtrar os personagens
 for (let i = 0; i < btnFilms.length; i++) {
   btnFilms[i].addEventListener('click', () => {
-    const movie = filmPeople(films, btnFilms[i].value)
-    const cards = showingCharactersCards(movie)
+    const people = filmPeople(films, btnFilms[i].value)
+    const cards = showingCharactersCards(people)
     characters.innerHTML = cards;
 
 
-
     //Função para mostrar a quantidade de personagens por filme
-    const message = `${(films[i].people).length} characters help tell this story!`
+    const message = `${people.length} characters help tell this story!`
     stats.innerHTML = message
   });
 } 
