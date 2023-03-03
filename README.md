@@ -38,32 +38,32 @@ O tema escolhido foi Estúdio Ghibli e o site é destinado aos fãs do estúdio 
 
 **História do usuário 3:** “Como usuário, gostaria de saber informações sobre cada animação, como descrição, data de lançamento, diretor e personagens”.
 
-*Cada filme será colocado em um card, com informações na frente e no verso. A parte da frente conterá o pôster e o nome de cada animação, assim como o diretor e a data de lançamento de cada uma. O verso conterá a sinopse da animação.
+* Cada filme será colocado em um card, com informações na frente e no verso. A parte da frente conterá o pôster e o nome de cada animação, assim como o diretor e a data de lançamento de cada uma. O verso conterá a sinopse da animação.
 
-*Para ver as informações do verso do card basta passar o cursor em cima de cada um, que ele irá girar e mostrar a parte de trás.
+* Para ver as informações do verso do card basta passar o cursor em cima de cada um, que ele irá girar e mostrar a parte de trás.
 
-*O site terá uma página específica para cada personagem, que serão mostrados de acordo com cada filme.
+* O site terá uma página específica para cada personagem, que serão mostrados de acordo com cada filme.
 
 
 **História do usuário 4:** “Como usuário, gostaria de ver quais e quantos são os personagens de cada animação”.
 
-*Com o cálculo agregado, colocar quantos personagens cada filme possui.
+* Com o cálculo agregado, colocar quantos personagens cada filme possui.
 
-*O site terá uma página específica para cada personagem, que poderão ser mostrados a partir de cada filme.
+* O site terá uma página específica para cada personagem, que poderão ser mostrados a partir de cada filme.
 
 
 **História do usuário 5:** "Como usuário, quero saber características específicas dos personagens, tais como nome, idade, sexo, espécie, para poder me sentir mais conectada com eles".
 
-*Na página de "personagens", criar cards para cada um deles.
+* Na página de "personagens", criar cards para cada um deles.
 
-*A parte da frente do card irá mostrar a imagem, o nome e o filme a qual eles pertencem. O verso mostrará o gênero, a idade, cor dos olhos e cabelo, e a espécie de cada personagem.
+* A parte da frente do card irá mostrar a imagem, o nome e o filme a qual eles pertencem. O verso mostrará o gênero, a idade, cor dos olhos e cabelo, e a espécie de cada personagem.
 
-*Ao repousar o cursor sobre a imagem, o card vai virar e revelar as características do personagem.
+* Ao repousar o cursor sobre a imagem, o card vai virar e revelar as características do personagem.
 
 
 **História do usuário 6:** "Como usuário, quero saber em quais locais as histórias se passam e quais veículos aparecem, para que o contexto do filme e o universo criado fiquem mais ricos e palpáveis"
 
-*Na página de "locais e veículos", criar cards para cada um deles, mostrando a imagem, o nome e a qual filme pertencem.
+* Na página de "locais e veículos", criar cards para cada um deles, mostrando a imagem, o nome e a qual filme pertencem.
 
 
 ## 3. Interface
@@ -150,7 +150,7 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 
 </details>
 
-**8** *A mentalidade "menos é mais"*, proporcionada pelos nossos usuários-testes.
+**8.** *A mentalidade "menos é mais"*, proporcionada pelos nossos usuários-testes.
 
 <details>
   <summary>Página inicial</summary>
@@ -188,15 +188,22 @@ Além da página de personagens, também reclamaram da tela de Home, apontando q
 ## 8. Objetivos alcançados
 
 ✨ Desenvolvimento de uma plataforma que permita ao usuário visualizar, filtrar e conhecer os filmes do Estúdio Ghibli, bem como os seus personagens, locais e veículos
+
 ✨ Criação de histórias de usuário e construção do site de acordo com estas histórias
+
 ✨ Desenvolvimento do projeto de acordo com os testes de usabilidade realizados com usuários reais
+
+✨ Cobertura de 100% nos testes unitários
+
 ✨ Páginas 100% responsivas
+
 ✨ Criação e validação de testes unitários para as funções criadas no código
 
 ## 9. Contatos
 
-**Aline Guiseline**
-💙 https://www.linkedin.com/in/alineguiseline/
+**Aline Guiseline** 💙 
+https://www.linkedin.com/in/alineguiseline/
 
-**Bruna Abreu**
-💙 https://github.com/bruna-abreu
+
+**Bruna Abreu** 💙 
+https://github.com/bruna-abreu
