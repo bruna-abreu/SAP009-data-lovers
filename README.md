@@ -202,8 +202,10 @@ Além da página de personagens, também reclamaram da tela de Home, apontando q
 ## 9. Contatos
 
 **Aline Guiseline** 💙 
+
 https://www.linkedin.com/in/alineguiseline/
 
 
 **Bruna Abreu** 💙 
+
 https://github.com/bruna-abreu

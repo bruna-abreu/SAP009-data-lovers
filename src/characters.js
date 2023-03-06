@@ -42,7 +42,6 @@ function showingCharactersCards(characters) {
 
 }
 
-//characters.innerHTML = showingCharactersCards(films)
 
 //Função para buscar o personagem pelo nome 
 characterSearch.addEventListener ('input', event => {

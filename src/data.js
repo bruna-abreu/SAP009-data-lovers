@@ -52,16 +52,20 @@ export const filters = (array, key, condition) =>
 
 //Funções dos personagens
 
+const getMoviesCharacters = (films) => {
+  let chars = []
+  for (let index = 0; index < films.length; index++) {
+    chars = [...chars, ...films[index].people]
+  }
+  return chars
+}
 //Função para buscar o personagem pelo nome
 export const searchCharacter = (films, searchedName) => {
-  const filmsCopy = JSON.parse(JSON.stringify(films))
-
-  filmsCopy.forEach(film => {
-    const search = film.people.filter(person => person.name.toLowerCase().includes(searchedName))
-    film.people = search
-  });
-  return filmsCopy;
-}
+  const chars = getMoviesCharacters(films)
+  const search = chars.filter(person => person.name.toLowerCase().includes(searchedName))
+   
+  return search;
+} 
 
 //Função para mostrar os personagens de acordo com o filme
 export function filmPeople (films, title) {
@@ -69,7 +73,6 @@ export function filmPeople (films, title) {
 
   const filmSelected = filmsCopy.find((film) => {
     return film.title === title
-    
   })
   return filmSelected.people
 }
