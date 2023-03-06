@@ -2,6 +2,8 @@
 
 Segundo projeto criado junto ao bootcamp da Laboratória, visando criar uma plataforma que exibisse um conjunto de dados, de acordo com a temática escolhida.
 
+🔗 [Clique aqui para acessar](https://alineguiseline.github.io/SAP009-data-lovers/)
+
 ## Índice
 
 * [1. Resumo do projeto](#1-resumo-do-projeto)
