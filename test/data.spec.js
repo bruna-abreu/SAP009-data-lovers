@@ -14,9 +14,7 @@ const fireflies = {
   director: "Isao Takahata", 
   release_date: 1988,
   people: [
-    {name: "Seita Yokokawa"},
-    {name: "Setsuko Yokokawa"},
-    {name: "Mrs. Yokokawa"}
+    {name: "Seita Yokokawa"}
   ]
 }
 
@@ -44,10 +42,22 @@ describe('search by name', () => {
     expect(typeof searchBar).toBe('function')
   });
 
-  //testar a barra de pesquisa -- ok
+  //testar a barra de pesquisa (apenas algumas letras) -- ok
   it('should filter by search bar', () => {
     const title = 'mar';
     expect(searchBar(testMovies, title)).toStrictEqual([marnie])
+  });
+
+  //testar a barra de pesquisa (palavra inteira) -- ok
+  it('should filter by search bar', () => {
+    const title = 'fireflies';
+    expect(searchBar(testMovies, title)).toStrictEqual([fireflies])
+  });
+
+  //testar a barra de pesquisa (nome do filme completo) -- ok
+  it('should filter by search bar', () => {
+    const title = 'castle in the sky';
+    expect(searchBar(testMovies, title)).toStrictEqual([castle])
   });
 })
 
@@ -107,12 +117,20 @@ describe('search by character', () => {
     expect(typeof searchCharacter).toBe('function')
   });
 
-  //testar a barra de pesquisa de personagem -- ok
-  it('should filter by character', () => {
+  //testar a barra de pesquisa de personagem (apenas algumas letras) -- ok
+  it('should filter by character - only some letters', () => {
     const name = 'lus';
     const resultado = searchCharacter(testMovies, name)
     expect(resultado.length).toEqual(1)
     expect(resultado[0].name).toEqual(castle.people[0].name)
+  });
+
+  //testar a barra de pesquisa de personagem (nome inteiro) -- ok
+  it('should filter by character - full name', () => {
+    const name = 'seita yokokawa';
+    const resultado = searchCharacter(testMovies, name)
+    expect(resultado.length).toEqual(1)
+    expect(resultado[0].name).toEqual(fireflies.people[0].name)
   });
 })
 
