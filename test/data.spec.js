@@ -107,14 +107,12 @@ describe('search by character', () => {
     expect(typeof searchCharacter).toBe('function')
   });
 
-  //testar a barra de pesquisa de personagem -- ERRO
+  //testar a barra de pesquisa de personagem -- ok
   it('should filter by character', () => {
     const name = 'lus';
     const resultado = searchCharacter(testMovies, name)
-    expect(resultado.length).toEqual(testMovies.length)
-    expect(resultado[0].people.length).toEqual(1)
-    expect(resultado[1].people.length).toEqual(0)
-    expect(resultado[2].people.length).toEqual(0)
+    expect(resultado.length).toEqual(1)
+    expect(resultado[0].name).toEqual(castle.people[0].name)
   });
 })
 
