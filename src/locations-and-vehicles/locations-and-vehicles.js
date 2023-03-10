@@ -1,4 +1,4 @@
-import data from './data/ghibli/ghibli.js';
+import data from '../data/ghibli/ghibli.js';
 
 const films = data.films
 const allCards = document.getElementById('allCards')
@@ -15,13 +15,11 @@ function showingLocationsCards(films) {
       const allLocations = 
         `
         <div id="locationsCard" class="locations">
-        <img id="locationsImg" alt="Location poster" src="${location.img}"/>
-
-        <div id="locationsName">
-        <p class="locationsTitle">${location.name}</p>
-        <p class="locationsMovie">(${film.title})</p>
-        </div>
-
+          <img id="locationsImg" alt="Location poster" src="${location.img}"/>
+          <div id="locationsName">
+            <p class="locationsTitle">${location.name}</p>
+            <p class="locationsMovie">(${film.title})</p>
+          </div>
         </div>
         `
       return allLocations
@@ -37,13 +35,11 @@ function showingVehiclesCards(films) {
       const allVehicles = 
           `
           <div id="vehiclesCard" class="vehicles">
-          <img id="vehiclesImg" alt="Vehicle poster" src="${vehicle.img}"/>
-  
-          <div id="vehiclesName">
-          <p class="vehiclesTitle">${vehicle.name}</p>
-          <p class="vehiclesMovie">(${film.title})</p>
-          </div>
-  
+            <img id="vehiclesImg" alt="Vehicle poster" src="${vehicle.img}"/>
+            <div id="vehiclesName">
+              <p class="vehiclesTitle">${vehicle.name}</p>
+              <p class="vehiclesMovie">(${film.title})</p>
+            </div>
           </div>
           `
       return allVehicles
