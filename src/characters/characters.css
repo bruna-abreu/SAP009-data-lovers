@@ -1,44 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.bgHeader {
-    background-image: url("./bg-image.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    overflow: hidden;
-} 
-
-#logo {
-    display: block;
-    margin: 5px auto;
-    max-width: 45%;
-    overflow: hidden;
-}
-
-.menu {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    position: relative;
-    margin-top: 2%;
-    justify-content: center;
-    gap: 15px;
-} 
-
-.menu a {
-
-    font-weight: 500;
-    text-decoration: none;
-    color: #1A3E4B;
-    font-size: 2rem;
-    align-items: center;
-    margin-left: 5%;
-}
-
-.movie-filters {
+.search-area {
     display: flex;
     position: relative;
     flex-direction: row;
@@ -46,26 +6,14 @@
     padding: 2%;
 }
 
-.filters {
-    background-color: #3793b7;
-    width: 10rem;
-    height: 1.7rem;
-    font-size: 1rem;
-    border-radius: 40px;
-    text-align: center;
-    color: white;
-    border: none;
-    margin-left: 2%;
-    cursor: pointer;
-}
-
-#movies-search {
-    background-color: #3793b7;
+#characters-search {
+    background-color: #3793b7; 
     width: 15rem;
     height: 1.7rem;
     font-size: 100%;
     border-radius: 40px;
     border: none;
+    
     padding: 0.5%;
     color: white;
     text-align: center;
@@ -73,6 +21,7 @@
 
 ::placeholder {
     color: white;
+    
     text-align: center;
 }
 
@@ -84,7 +33,7 @@
     border-radius: 40px;
     border: none;
     padding: 0.5%;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     color: white;
     cursor: pointer;
     display: flex;
@@ -97,7 +46,7 @@
 }
 
 .stats {
-    background-color: #3793b7;
+    background-color: #46A4C8;
     font-family: 'DM Sans', sans-serif;
     height: 50px;
     color: white;
@@ -105,7 +54,32 @@
     text-align: center;
 }
 
-  #movieCards {
+.btn-films {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-film {
+    width: 8rem;
+    height: 5rem;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #46A4C8;
+    border: none;
+    color: #FFF;
+    
+    border-radius: 10px;
+}
+
+#charactersCards {
     display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -128,6 +102,7 @@
     width: 100%;
     height: 100%;
     border-radius: 2%;
+
     transform-style: preserve-3d;
     transition: all 0.8s ease;
 }
@@ -145,10 +120,9 @@
     color: white;
     text-align: center;
     border-radius: 3%;
-    padding: 5% 0 47% 0;
+    padding: 8% 0 15% 0;
     font-weight: 400;
     border-radius: 30px;
-
 }
 
 #backCard {
@@ -159,17 +133,22 @@
     background: #46A4C8;
     color: white;
     transform: rotateY(180deg);
+    padding-top: 20%;
+    padding-left: 15%;
+    padding-right: 10%;
+    line-height: 170%;
+    font-size: larger;
     border-radius: 30px;
-    padding-top: 10%;
-    padding-left: 7%;
-    padding-right: 7%;
-    line-height: 110%;
 }
 
-#filmPoster {
+#characterImg {
     width: 80%;
-    height: 110%;
+    height: 100%;
     border-radius: 25px;
+}
+
+#charactersName {
+    padding-bottom: 8%;
 }
 
 .footer {
@@ -192,114 +171,106 @@
     color: #fff;
 }
 
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 720px) {
     .menu a {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         justify-content: center;
     }
 }
 
-@media screen and (max-width: 700px) {
-    .menu a {
-        font-size: 1rem;
-        justify-content: center;
-    }
-
-    #movies-search {
-        width: 8rem;
-    }
-
-    #clean {
-        width: 4rem;
-        margin-left: 0.6rem;
-    }
-
-    .filters {
-        width: 5rem;
-        height: 1.7rem;
-        font-size: 1rem;
-    }
-    .stats {
-        padding-top: 1rem;
-    }
-}   
-
-@media screen and (max-width: 500px) {
-    .menu a {
-        font-size: 1rem;
-        justify-content: center;
-    }
-
-    .movie-filters {
-        margin-left: 0.3rem;
-    }
-
-    #movies-search {
-        width: 4rem;
-        font-size: 75%;
-    }
-
-    #clean {
-        margin-left: 0.4rem;
-        font-size: 75%;
-    }
-
-    .filters {
-        width: 6rem;
-        height: 1.7rem;
-        font-size: 75%;
-    }
-
-    .stats {
-        padding-top: 0.7rem;
-    }
-}
-
-@media screen and (max-width: 480px){
-    .menu {
-        margin-right: 2rem;
-    }
-
-    .menu a {
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 550px) {
     .menu {
         margin-right: 1rem;
     }
 
     .menu a {
-        font-size: 0.8rem;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    .stats {
+        padding-top: 1rem;
+    }
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
+    }
+}   
+
+
+@media screen and (max-width: 500px) {
+    .menu {
+        margin-right: 1rem;
+    }
+
+    .menu a {
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    .stats {
+        padding-top: 1rem;
+    }
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .menu {
+        margin-right: 1rem;
+    }
+
+    .menu a {
+        font-size: 0.9rem;
+    }
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 300px) {
     .menu a {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
     }
 
-    #movies-search {
-        width: 3.5rem;
-        font-size: 60%;
-    }
-
-    .filters {
-        width: 4rem;
-        height: 1.7rem;
-        font-size: 60%;
+    #characters-search {
+        width: 9rem;
+        font-size: 80%;
     }
 
     #clean {
         width: 4rem;
-        font-size: 60%;
-        margin-right: 0.5rem;
+        font-size: 80%;
     }
 
     .stats {
-        padding-top: 0.8rem;
+        padding-top: 0.5rem;
         font-size: 90%;
+    }
+
+    .btn-films {
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    
+    }
+    
+    .btn-film {
+        width: 6rem;
+        height: 6rem;
+        padding: 1rem;
+    }
+
+    #card {
+        margin-left: 0.3rem;
+        margin-right: 3rem; 
     }
 }

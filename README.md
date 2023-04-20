@@ -77,7 +77,7 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Paleta de cores</summary>
   
- ![Desktop](./Paleta-de-cores.jpeg)
+ ![Desktop](./README/Paleta-de-cores.jpeg)
   
 </details>
 
@@ -86,7 +86,7 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Página de filmes</summary>
   
-![Desktop](./Page-Movies.png)
+![Desktop](./README/Page-Movies.png)
   
 </details>
 
@@ -95,7 +95,7 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Página de personagens</summary>
   
-![Desktop](./Page-Characters.png)
+![Desktop](./README/Page-Characters.png)
   
 </details>
 
@@ -104,7 +104,7 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Página de locais e veículos</summary>
   
-![Desktop](./Page-Locations-and-vehicles.png)
+![Desktop](./README/Page-Locations-and-vehicles.png)
   
 </details>
 
@@ -113,14 +113,14 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Card de personagens</summary>
   
-![Desktop](./Page-Characters-Opened.png)
+![Desktop](./README/Page-Characters-Opened.png)
   
 </details>
 
 <details>
   <summary>Card de filmes</summary>
   
-![Desktop](./Page-Movies-Opened.png)
+![Desktop](./README/Page-Movies-Opened.png)
   
 </details>
 
@@ -129,14 +129,14 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Filtros dos filmes</summary>
   
-![Desktop](./Page-Movies-Filter.png)
+![Desktop](./README/Page-Movies-Filter.png)
   
 </details>
 
 <details>
   <summary>Botões de seleção dos personagens</summary>
 
-![Desktop](./Page-Characters-Buttons.png)
+![Desktop](./README/Page-Characters-Buttons.png)
 
 </details>
 
@@ -145,10 +145,10 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Visualização responsiva</summary>
 
-![Mobile](./Responsive-Home.jpg)
-![Mobile](./Responsive-Movies.jpg)
-![Mobile](./Responsive-Characters.jpg)
-![Mobile](./Responsive-Locations-and-vehicles.jpg)
+![Mobile](./README/Responsive-Home.jpg)
+![Mobile](./README/Responsive-Movies.jpg)
+![Mobile](./README/Responsive-Characters.jpg)
+![Mobile](./README/Responsive-Locations-and-vehicles.jpg)
 
 </details>
 
@@ -157,7 +157,7 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 <details>
   <summary>Página inicial</summary>
 
-![Desktop](./Page-Home.png)
+![Desktop](./README/Page-Home.png)
 
 </details>
 
@@ -165,14 +165,14 @@ Todo o projeto foi pensado para ser o mais intuitivo e visualmente agradável po
 
 Criado no Canva, o protótipo de baixa fidelidade serviu como um bom guia, sendo seguido, praticamente, à risca.
 
-![Desktop](./Prototype-1.jpeg)
+![Desktop](./README/Prototype-1.jpeg)
 
 ## 5. Protótipo de alta fidelidade
 
 O protótipo de alta fidelidade foi criado no Figma e completou, em design e funções, o de baixa fidelidade. No entanto, ao longo do desenvolvimento do projeto e devido aos testes de usabilidade realizados, algumas alterações mostraram-se necessárias.
 
-![Desktop](./Prototype-2.png)
-![Desktop](./Prototype-3.png)
+![Desktop](./README/Prototype-2.png)
+![Desktop](./README/Prototype-3.png)
 ## 6. Testes de usabilidade
 
 Enquanto montávamos o protótipo do projeto no Figma, utilizamos a função "Present", que permite criar um protótipo navegável, e pedimos para que algumas pessoas próximas testassem o projeto, dando suas opiniões sobre o design e sobre a usabilidade. Os feedbacks foram positivos, mas algumas mudanças foram sugeridas, tais como alteração da fonte do texto (para harmonizar com a fonte escolhida para o menu), alteração na cor do fundo (a fim de cansar menos os olhos) e a retirada o negrito dos filtros e do menu (buscando trazer mais leveza ao site).

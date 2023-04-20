@@ -9,19 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <title>Movies</title>
-    <link rel="stylesheet" href="movies.css" />
-    <link rel="icon" type="image/png" href="./totoro-icon.png"/>
+    <link rel="stylesheet" href="movies.css"/>
+    <link rel="stylesheet" href="../header.css"/>
+    <link rel="icon" type="image/png" href="../assets/totoro-icon.png"/>
 </head>
 <body class="generalBody">
+  <style>a {text-decoration: none;}</style>
   <header class="bgHeader">
-    <img src="./ghibli-logo.png" alt="logo studio ghibli" id="logo">
-
-    <style>a {text-decoration: none;}</style>
+    <img src="../assets/ghibli-logo.png" alt="logo studio ghibli" id="logo">
 
     <nav class="menu" id="moviesMenu">
-      <a href="./index.html">Home</a> 
-      <a href="./characters.html">Characters</a>
-      <a href="./locations-and-vehicles.html">Locations and Vehicles</a>   
+      <a href="../index.html">Home</a> 
+      <a href="../characters/characters.html">Characters</a>
+      <a href="../locations-and-vehicles/locations-and-vehicles.html">Locations and Vehicles</a>   
     </nav>
 
     <div class="movie-filters">
@@ -54,7 +54,6 @@
   <p class="stats">Welcome to the movies page!</p>
   <main>
 
-    <div id="infos"></div>
     <div id="movieCards"></div>
 
   </main>
@@ -63,6 +62,6 @@
     <p class="footer-credits">Developed by <a href="https://github.com/AlineGuiseline" class="footer-links">Aline Guiseline</a> and <a href="https://github.com/bruna-abreu" class="footer-links">Bruna Abreu</a> ❤</p>
   </footer>
 
-  <script src="main.js" type="module"></script>
+  <script src="movies.js" type="module"></script>
 </body>
 </html> 
